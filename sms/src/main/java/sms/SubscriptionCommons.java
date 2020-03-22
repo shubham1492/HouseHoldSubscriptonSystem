@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Set;
 
+// Common class which provide business logic  
 public class SubscriptionCommons {
 	private Calendar calendar;
 	private SimpleDateFormat sdFormat;
@@ -16,6 +17,7 @@ public class SubscriptionCommons {
 		date = calendar.getTime();
 	}
 
+	// Business Logic for  all subscription type
 	public void calculateBy(String subcriptionType, String[] userItemList) {
 		boolean isDaily = false;
 		boolean isBiWeekly = false;
