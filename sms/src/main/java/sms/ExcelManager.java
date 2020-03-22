@@ -1,6 +1,7 @@
 package sms;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import com.codoid.products.exception.FilloException;
 import com.codoid.products.fillo.Connection;
@@ -14,7 +15,7 @@ public class ExcelManager {
 	private Connection conn;
 	private Recordset rs;
 	private String subcriptionFile;
-	protected static HashMap<String, HashMap<String, String>> itemsDetails = new HashMap<String, HashMap<String, String>>();
+	protected static LinkedHashMap<String, LinkedHashMap<String, String>> itemsDetails = new LinkedHashMap<String, LinkedHashMap<String, String>>();
 
 	public ExcelManager() {
 		fillo = new Fillo();
@@ -48,15 +49,15 @@ public class ExcelManager {
 				String monday = rs.getField("Monday");
 				String tuesday = rs.getField("Tuesday");
 				String wednesday = rs.getField("Wednesday");
-				String thrusday = rs.getField("Thrusday");
+				String thrusday = rs.getField("Thursday");
 				String friday = rs.getField("Friday");
 				String saturday = rs.getField("Saturday");
 				String sunday = rs.getField("Sunday");
-				HashMap<String, String> rateChart = new HashMap<>();
+				LinkedHashMap<String, String> rateChart = new LinkedHashMap<>();
 				rateChart.put("Monday", monday);
 				rateChart.put("Tuesday", tuesday);
 				rateChart.put("Wednesday", wednesday);
-				rateChart.put("Thrusday", thrusday);
+				rateChart.put("Thursday", thrusday);
 				rateChart.put("Friday", friday);
 				rateChart.put("Saturday", saturday);
 				rateChart.put("Sunday", sunday);
