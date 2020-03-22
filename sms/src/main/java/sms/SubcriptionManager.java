@@ -1,6 +1,7 @@
 package sms;
 
-// Manager class it will handle all classes
+// Manager class it will handle all classes ++
+
 public class SubcriptionManager extends SubcriptionCore {
 
 	public void StartSubcriptionManager(String subcriptionType, String[] items) {
