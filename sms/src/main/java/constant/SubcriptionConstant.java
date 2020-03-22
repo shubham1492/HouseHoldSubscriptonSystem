@@ -1,7 +1,7 @@
-package sms;
+package constant;
 
 // Constant Class 
 public class SubcriptionConstant {
 
-	final static String FILE_PATH = "\\src\\main\\resources\\Excel\\Subcription.xlsx";
+	public final static String FILE_PATH = "\\src\\main\\resources\\Excel\\Subcription.xlsx";
 }

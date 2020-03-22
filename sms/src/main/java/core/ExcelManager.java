@@ -1,4 +1,4 @@
-package sms;
+package core;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -8,6 +8,8 @@ import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
 
+import constant.SubcriptionConstant;
+
 // Excel Reading class 
 public class ExcelManager {
 
@@ -15,7 +17,7 @@ public class ExcelManager {
 	private Connection conn;
 	private Recordset rs;
 	private String subcriptionFile;
-	protected static LinkedHashMap<String, LinkedHashMap<String, String>> itemsDetails = new LinkedHashMap<String, LinkedHashMap<String, String>>();
+	public static LinkedHashMap<String, LinkedHashMap<String, String>> itemsDetails = new LinkedHashMap<String, LinkedHashMap<String, String>>();
 
 	public ExcelManager() {
 		fillo = new Fillo();
@@ -41,11 +43,13 @@ public class ExcelManager {
 
 	// Read Excel data by Fillo libraray
 	public void readExcel() {
+		
+
 		String query = "select * from subcription_table";
 		try {
 			rs = conn.executeQuery(query);
 			while (rs.next()) {
-				String key = rs.getField("items");
+				String item = rs.getField("Items");
 				String monday = rs.getField("Monday");
 				String tuesday = rs.getField("Tuesday");
 				String wednesday = rs.getField("Wednesday");
@@ -61,7 +65,7 @@ public class ExcelManager {
 				rateChart.put("Friday", friday);
 				rateChart.put("Saturday", saturday);
 				rateChart.put("Sunday", sunday);
-				itemsDetails.put(key, rateChart);
+				itemsDetails.put(item, rateChart);
 			}
 		} catch (FilloException e) {
 			// TODO Auto-generated catch block
