@@ -7,6 +7,7 @@ import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
 
+// Excel Reading class 
 public class ExcelManager {
 
 	private Fillo fillo;
@@ -37,6 +38,7 @@ public class ExcelManager {
 		conn.close();
 	}
 
+	// Read Excel data by Fillo libraray
 	public void readExcel() {
 		String query = "select * from subcription_table";
 		try {
